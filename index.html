@@ -1,0 +1,338 @@
+<html>
+    <main id="main">
+        <style type="text/css">
+            #main {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 3px solid darkblue;
+                border-radius: 2%;
+                background: linear-gradient(to right top, #c4f6f8, #b6f4f6, #a8f1f4, #99eff2, #89ecf0);
+                text-align: center;
+            }
+
+            input[id="name-label"],
+            input[id="email-label"],
+            input[id="number-label"],
+            textarea[id="textarea"] {
+                width: 100%;
+                border: 2px solid blue;
+                border-radius: 4px;
+                margin: 8px 0;
+                outline: none;
+                padding: 8px;
+                box-sizing: border-box;
+                transition: .3s;
+            }
+
+            input[type="text"]:focus {
+                border-color: dodgerBlue;
+                box-shadow: 0 0 8px 0 dodgerBlue;
+            }
+
+            .inputWithIcon input[type="text"] {
+                padding-left: 40px;
+            }
+
+            .inputWithIcon {
+                position: relative;
+            }
+
+            .inputWithIcon i {
+                position: absolute;
+                left: 0;
+                top: 30px;
+                padding: 9px 4px;
+                color: #aaa;
+                transition: 0.3s;
+            }
+
+            .inputWithIcon input[type="text"]:focus+i {
+                color: dodgerBlue;
+            }
+
+            .inputWithIcon.inputIconBg i {
+                background-color: mediumaquamarine;
+                color: #fff;
+                padding: 5px 4px;
+                border-radius: 4px 0 0 4px;
+            }
+
+            .inputWithIcon.inputIconBg input[type="text"]:focus+i {
+                color: #fff;
+                background-color: dodgerBlue;
+            }
+
+            input[type="checkbox"]+label {
+                display: block;
+                margin: 0.2em;
+                cursor: pointer;
+                text-align: left;
+            }
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            input[type="checkbox"]+label:before {
+                content: "\2714";
+                border: 0.1em solid blue;
+                border-radius: 0.2em;
+                display: inline-block;
+                width: 0.8em;
+                height: 0.8em;
+                padding: 0.2em;
+                margin-right: 0.2em;
+                vertical-align: bottom;
+                color: transparent;
+            }
+
+            input[type="checkbox"]+label:active:before {
+                transform: scale(0);
+            }
+
+            input[type="checkbox"]:checked+label:before {
+                background-color: dodgerblue;
+                border-color: blue;
+                color: #fff;
+                transition: .2s;
+                padding: 4px;
+            }
+
+            input[type="radio"]+label {
+                position: relative;
+                padding: 3px 0 0 40px;
+                cursor: pointer;
+            }
+
+            input[type="radio"]+label:before {
+                content: '';
+                background: #fff;
+                height: 25px;
+                width: 25px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+
+            #name-label:hover,
+            #email-label:hover,
+            #number-label:hover {
+                color: dodgerblue;
+            }
+
+            #select1:hover,
+            #select2:hover {
+                color: darkblue;
+            }
+
+            #select1,
+            #select2 {
+                width: 100px;
+            }
+
+            #field2,
+            #field4 {
+                border: 2px solid blue;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 15px;
+                position: relative;
+                font-family: sans-serif;
+                margin-right: 30%;
+                margin-left: 30%;
+            }
+
+            #radioForm {
+                margin-left: 17%;
+                margin-right: 17%;
+                text-align: left;
+            }
+
+            #improved {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+
+            #submit {
+                border: 2px solid blue;
+                border-radius: 10px;
+                width: 150px;
+                color: blue;
+                padding: 5px;
+                margin-bottom: 5px;
+            }
+
+            #field1,
+            #field3,
+            #field5 {
+                margin-right: 20%;
+                margin-left: 20%;
+                border: 2px solid blue;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                border-radius: 20px;
+                font-family: sans-serif;
+            }
+
+            h1 {
+                text-shadow: 1px 1px blue;
+                font-family: sans-serif;
+            }
+
+            h2,
+            h3,
+            h4 {
+                text-shadow: 0.5px 0.5px blue;
+                font-family: sans-serif;
+            }
+
+            #field6 {
+                margin-right: 20%;
+                margin-left: 20%;
+                border: 2px solid blue;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                border-radius: 20px;
+                font-family: sans-serif;
+                padding: 10px;
+                margin-bottom: 4px;
+                margin-top: 2px;
+                position: relative;
+            }
+        </style>
+        <body>
+            <div id="body">
+                <div id="header">
+                    <head>
+                        <link rel="stylesheet" type="text/css" src="styles.css">
+                        <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+                        <h1>Survey Form!</h1>
+                        <title>Survey Form</title>
+                    </head>
+                </div>
+
+                <form action="/action_page.php" id="form">
+                    <fieldset id="field1">
+                        <legend>
+                            <h3>Let us know how to improve FreeCodeCamp!</h3>
+                        </legend>
+                        <div class="inputWithIcon">
+                            <strong>Name:</strong><input type="text" id="name-label" placeholder="Enter your name!" required>
+                            <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i></div>
+                        <br>
+                        <div class="inputWithIcon">
+                            <strong>Email:</strong><input type="text" id="email-label" placeholder="Enter your email!" required>
+                            <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i></div>
+                        <br>
+                        <div class="inputWithIcon">
+                            <strong>Number:</strong><input type="text" id="number-label" placeholder="Enter your number!" required>
+                            <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                    </fieldset>
+                </form>
+                <br>
+
+                <fieldset id="field2">
+                    <legend>
+                        <h4>Which of these options can describe your current role: </h4>
+                    </legend>
+                    <select id="select1">
+                        <option>Student</option>
+                        <option>Full-time job</option>
+                        <option>Full-time learner</option>
+                        <option>Other</option>
+                        <option>Not Sure</option>
+                    </select>
+                </fieldset>
+                <br>
+
+                <form action="/action_page.php" id="radioForm">
+                    <fieldset id="field3">
+                        <legend>
+                            <h4> How likely is that you would recommend freeCodeCamp?</h4>
+                        </legend>
+                        <input type="radio" id="radio1" name="definitely">
+                        <strong>
+                            <label for="radio1">Definitely
+                            </label>
+                        </strong><br>
+                        <input type="radio" id="radio2" name="probably">
+                        <strong>
+                            <label for="radio2">Probably</label>
+                        </strong><br>
+                        <input type="radio" id="radio3" name="not">
+                        <strong>
+                            <label for="radio3">Not Sure </label>
+                        </strong>
+                    </fieldset>
+                </form><br>
+
+                <fieldset id="field4">
+                    <legend>
+                        <h4>What of these options u like the most on FCC:</h4>
+                    </legend>
+                    <select id="select2">
+                        <option>Challenges</option>
+                        <option>Projects</option>
+                        <option>Community</option>
+                        <option>Open Source</option>
+                    </select><br>
+                </fieldset>
+
+                <form id="improved">
+                    <fieldset id="field5">
+                        <legend>
+                            <h4>Things that should be improved in the future:</h4>
+                        </legend>
+                        <strong><input type="checkbox" name="front" id="first" value="front">
+                            <label for="first">Front-End Projects</label>
+                            <br>
+                            <input type="checkbox" name="back-end" id="second" value="back-end">
+                            <label for="second">Back-End Projects</label>
+                            <br>
+                            <input type="checkbox" name="data" id="third" value="data">
+                            <label for="third">Data Visualisation</label>
+                            <br>
+                            <input type="checkbox" name="challenge" id="four" value="name">
+                            <label for="four">Challenges</label>
+                            <br>
+                            <input type="checkbox" name="source" id="five" value="source">
+                            <label for="five">Open Source Community</label>
+                            <br>
+                            <input type="checkbox" name="gitter" id="six" value="gitter">
+                            <label for="six">Gitter help rooms</label>
+                            <br>
+                            <input type="checkbox" name="videos" id="seven" value="videos">
+                            <label for="seven">Videos </label>
+                            <br>
+                            <input type="checkbox" name="city" id="eight" value="city">
+                            <label for="eight">City Meetups</label>
+                            <br>
+                            <input type="checkbox" name="wiki" id="nine" value="wiki">
+                            <label for="nine">Wiki</label>
+                            <br>
+                            <input type="checkbox" name="forum" id="ten" value="forum">
+                            <label for="ten">Forum</label>
+                            <br>
+                            <input type="checkbox" name="courses" id="eleven" value="courses">
+                            <label for="eleven">Additional Courses</label>
+                        </strong>
+                    </fieldset>
+                </form><br>
+
+                <form action="/action_page.php">
+                    <fieldset id="field6">
+                        <legend>
+                            <h4>Please write here some suggestions if u have. We will appreciate that!!</h4>
+                        </legend>
+                        <textarea name="message" rows="6" cols="60" placeholder="Type here your suggestions if u have!" id="textarea"></textarea>
+                        <br>
+                        <button type="submit" id="submit"><strong>Submit</strong></button>
+                    </fieldset>
+                </form>
+            </div>
+        </body>
+    </main>
+</html>
